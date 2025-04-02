@@ -7,9 +7,9 @@ El electromiograma (EMG) es una herramienta fundamental para el estudio de la ac
 1. Colocación de electrodosy conexión de DAQ.
 2. Adquisición de la señal EMG.
 3. Procesamiento de la señal.
-3.1. Filtrado de señal.
-3.2. Detección de picos.
-3.3. Aplicaión de ventana.
+  3.1. Filtrado de señal.
+  3.2. Detección de picos.
+  3.3. Aplicaión de ventana.
 4. Análisis de fatiga.
 Interpretación y almacenamiento.
 
