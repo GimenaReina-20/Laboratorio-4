@@ -58,6 +58,19 @@ def filtro_pasa_banda(senal, fs, lowcut, highcut, order=4):
 ![Figura 5 lab 4](https://github.com/user-attachments/assets/616dbe39-b505-462b-9905-424aff89ed65)
 <img width="481" alt="Figura 6 lab 4" src="https://github.com/user-attachments/assets/87deb2be-c452-4f98-95f8-ccb06685cd02" />
 
+### 4. Análisis de frecuencia mediana: 
+Se definieron ventanas manuales donde se identifican contracciones musculares. Para cada ventana, se calculó la frecuencia mediana del espectro de potencia, útil para detectar fatiga muscular.
+
+f_mediana = freqs[np.where(potencia_acumulada >= potencia_total / 2)[0][0]]
+
+### 5. Prueba de hipótesis: fatiga muscular:
+Se dividieron las contracciones en dos grupos (inicio y fin del experimento) y se aplicó una prueba t de Student para evaluar si hay una diferencia significativa en la frecuencia mediana (indicador de fatiga):
+
+t_stat, p_value = ttest_ind(grupo1, grupo2)
+
+Si el valor p < 0.05 → fatiga detectada.
+
+
 ## Ventanas:
 
 
