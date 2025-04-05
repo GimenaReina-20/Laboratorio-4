@@ -14,7 +14,7 @@ El electromiograma (EMG) es una herramienta fundamental para el estudio de la ac
 5. Interpretación y almacenamiento.
 
 ## Programación y datos:
-1. Captura de la señal emg:
+### 1. Captura de la señal emg:
 Se desarrolló una clase que permite leer datos analógicos desde un dispositivo DAQ. La función read lee bloques de muestras en punto flotante:
 
 def read(self, muestras):
@@ -40,7 +40,7 @@ Se utilizó Tkinter y Matplotlib para crear una interfaz donde el usuario puede 
 btn_iniciar = tk.Button(frame_botones, text="Iniciar Captura", command=iniciar)
 btn_detener = tk.Button(frame_botones, text="Detener y Guardar", command=lambda:[detener(), guardar_datos()])
 
-3. Procesamiento de la señal EMG:
+### 2. Procesamiento de la señal EMG:
 Una vez finalizada la captura, la señal se guarda en un archivo CSV y se procesa mediante:
 - Filtro pasa banda (20–450 Hz) para eliminar ruido.
 - Cálculo de la envolvente con transformada de Hilbert.
@@ -51,7 +51,7 @@ def filtro_pasa_banda(senal, fs, lowcut, highcut, order=4):
     b, a = butter(order, [lowcut / nyq, highcut / nyq], btype='band')
     return filtfilt(b, a, senal)
 
-4. Visualización de resultados:
+### 3. Visualización de resultados:
 ![Figura 1 lab 4](https://github.com/user-attachments/assets/46e6fe1b-a6f4-494b-b132-5a42c608a6d4)
 ![Figura 2 lab 4](https://github.com/user-attachments/assets/24b946fa-fd1a-477e-9617-6f4d83704b51)
 ![Figura 3 lab 4](https://github.com/user-attachments/assets/411c39ce-6e9c-47e0-8a05-28d81a33e72f)
